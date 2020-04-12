@@ -1,0 +1,16 @@
+{
+    "bus_list": [
+        {
+            "starting_point": "Moscow",
+            "final_point": "Piter",
+            "number_of_route": 246,
+            "travel_time": 3
+        },
+        {
+            "starting_point": "Tashkent",
+            "final_point": "Wmam",
+            "number_of_route": 321,
+            "travel_time": 1
+        }
+    ]
+}
