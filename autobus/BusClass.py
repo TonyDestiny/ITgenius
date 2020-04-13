@@ -1,6 +1,3 @@
-from typing import List
-
-
 class Bus(object):
 
     def __init__(self,
@@ -49,16 +46,16 @@ class Bus(object):
 
 class BusRoute(object):
 
-    def __init__(self, bus_list: List[Bus]):
-        self.bus_list: List[Bus] = bus_list
+    def __init__(self):
+        self.bus_list = []
 
-    def add_bus(self, starting_point=None,
-                final_point=None,
-                number_of_route=None,
-                travel_time=None):
-        self.bus_list.append(Bus(starting_point, final_point, number_of_route, travel_time))
+    def add_bus(self, bus):
+        self.bus_list.append(bus)
 
     @classmethod
     def from_json(cls, data: dict):
+        bus_obj = cls()
         bus_list = list(map(Bus.from_json, data["bus_list"]))
-        return cls(bus_list)
+        for bus in bus_list:
+            bus_obj.add_bus(bus)
+        return bus_obj
