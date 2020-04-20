@@ -1,16 +1,16 @@
 {
     "bus_list": [
         {
-            "starting_point": "Moscow",
-            "final_point": "Piter",
-            "number_of_route": 246,
-            "travel_time": 3
+            "starting_point": "sdf",
+            "final_point": "asd,asdads",
+            "number_of_route": "asd",
+            "travel_time": null
         },
         {
-            "starting_point": "Tashkent",
-            "final_point": "Sochi",
-            "number_of_route": 321,
-            "travel_time": 1
+            "starting_point": "sdf",
+            "final_point": "asd,asdads",
+            "number_of_route": "asd",
+            "travel_time": null
         }
     ]
 }

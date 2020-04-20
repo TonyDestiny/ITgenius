@@ -4,13 +4,20 @@ from BusClass import *
 
 
 def sort_list(lst):
-    pass
+    if len(lst) < 2:
+        return lst
+    else:
+        pivot = lst[0]
+        less = [i for i in lst[1:] if i.number_of_route <= pivot.number_of_route]
+        greater = [i for i in lst[1:] if i.number_of_route > pivot.number_of_route]
+
+        return sort_list(less) + [pivot] + sort_list(greater)
 
 
 def search_route(list_route, search):
     find_route = []
     for route in list_route:
-        if route.strting_point == search or route.final_point == search:
+        if route.starting_point == search or route.final_point == search:
             find_route.append(route)
     return find_route
 
