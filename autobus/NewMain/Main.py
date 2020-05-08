@@ -77,8 +77,8 @@ class Main(tk.Frame):
         self.view_records()
 
     def search_records(self, start):
-        start = ('%' + start + '%',)
-        self.db.c.execute('''SELECT * FROM bus_routes WHERE start LIKE ?''', start)
+        start = '%' + start + '%'
+        self.db.c.execute('''SELECT * FROM bus_routes WHERE start LIKE ? OR finish LIKE ?''', (start, start))
         [self.tree.delete(i) for i in self.tree.get_children()]
         [self.tree.insert('', 'end', values=row) for row in self.db.c.fetchall()]
 
